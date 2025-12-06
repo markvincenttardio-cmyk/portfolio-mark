@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark Vincent | Game Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #101620;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ----- NAVIGATION ----- */
+header{
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(16,22,32,0.9);
+    border-bottom: 1px solid #222;
+}
+
+header .logo{
+    font-size: 24px;
+    font-weight: 600;
+    color: #c8d6df;
+}
+
+nav a{
+    margin-left: 30px;
+    color: #c8d6df;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+nav a:hover{
+    color: #00aaff;
+}
+
+/* ----- SECTION LAYOUT ----- */
+section{
+    width: 90%;
+    max-width: 1000px;
+    background: #141c27;
+    border-radius: 25px;
+    padding: 60px;
+    margin: 120px auto;
+    display: none; /* hide all by default */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+section.active{
+    display: flex; /* show active section */
+}
+
+section:nth-child(even){
+    flex-direction: row-reverse; /* alternate layout */
+}
+
+.text-content{
+    flex: 1;
+    max-width: 50%;
+}
+
+.text-content h2{
+    font-size: 36px;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.text-content p{
+    line-height: 1.6;
+    color: #8c9ba5;
+    margin-bottom: 20px;
+}
+
+.image-section{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.image-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: brightness(1.1);
+}
+.image-glow{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: #00aaff;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    filter: blur(25px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* ----- SOCIAL ICONS ----- */
+.social-links{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.social-links a{
+    font-size: 20px;
+    color: #8c9ba5;
+    transition: color 0.3s ease;
+    border: 1px solid #8c9ba5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-links a:hover{
+    color: #00aaff;
+    border-color: #00aaff;
+}
+
+/* ----- DOWNLOAD BUTTON ----- */
+.btn-cv{
+    padding: 12px 30px;
+    border-radius: 8px;
+    background: #00aaff;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-cv:hover{
+    background: #0088cc;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+/* ----- RESPONSIVE ----- */
+@media(max-width: 992px){
+    section{
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    .text-content{
+        max-width: 100%;
+        order: 2;
+    }
+    .image-section{
+        order: 1;
+        margin-bottom: 30px;
+    }
+    .social-links{
+        justify-content: center;
+    }
+}
+@media(max-width: 600px){
+    section{
+        padding: 30px;
+    }
+    .image-section{
+        width: 250px;
+        height: 250px;
+    }
+    nav a{
+        margin-left: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Portfolio.</div>
+    <nav>
+        <a href="#" data-target="home">Home</a>
+        <a href="#" data-target="about">About</a>
+        <a href="#" data-target="skills">Skills</a>
+        <a href="#" data-target="portfolio">Portfolio</a>
+        <a href="#" data-target="contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+    <div class="text-content">
+        <p class="greeting">Hello, It's Me</p>
+        <h1 class="name">Mark Vincent</h1>
+        <h2 class="profession">And I'm a Game Developer</h2>
+        <p class="mark.png">
+            Im a web developer at gumagawa ng laro na parang <strong>Summer Saga HAHAH</strong>, pero mas wild at nakakatawa at sure ako na talagang mapaparelpse ka. Well, just future developer, have a good day, love you.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mark.vincent.tardio.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <a href="CV_MARK_VINCENT.pdf" class="btn-cv" download>Download CV</a>
+    </div>
+    <div class="image-section">
+        <div class="image-glow"></div>
+        <img src="mark.png" alt="Mark Vincent">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="text-content">
+        <h2>About Me</h2>
+        <p>
+            Hi! I'm Mark Vincent, isang graduate ng Arellano University at mahilig sa game development. Mahilig din ako sa web development at mga creative projects. Kapag naglalaro ka ng laro ko, expect mo ang kakaibang humor at fun na NPC interactions!
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mark.vincent.tardio.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="image-glow"></div>
+        <img src="mark.png" alt="About Image">
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="text-content">
+        <h2>My Skills</h2>
+        <p>
+            Game Development, Web Development, JavaScript, HTML, CSS, Unity, and more. Ako ay creative at mahilig gumawa ng projects na nakakatawa at engaging.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mark.vincent.tardio.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="image-glow"></div>
+        <img src="mark.png" alt="Skills Image">
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <div class="text-content">
+        <h2>Portfolio</h2>
+        <p>
+            Ilan sa mga proyekto ko: Summer Saga style games, web apps, at mga experimental game projects na may fun twist.
+        </p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mark.vincent.tardio.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="image-glow"></div>
+        <img src="mark.png" alt="Portfolio Image">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="text-content">
+        <h2>Contact Me</h2>
+        <p>Email: markvincent@example.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mark.vincent.tardio.2025" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="image-section">
+        <div class="image-glow"></div>
+        <img src="mark.png" alt="Contact Image">
+    </div>
+</section>
+
+<script>
+// Get all nav links
+const navLinks = document.querySelectorAll('nav a');
+// Get all sections
+const sections = document.querySelectorAll('section');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Show target section
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) targetSection.classList.add('active');
+    });
+});
+</script>
+
+</body>
+</html>
